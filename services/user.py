@@ -10,7 +10,7 @@ def create_user(
         email: str | None = None,
         first_name: str | None = None,
         last_name: str | None = None
-) -> None:
+) -> User:
     user = User.objects.create_user(
         username=username,
         password=password
@@ -25,7 +25,7 @@ def create_user(
 
     user.save()
 
-    return None
+    return user
 
 
 def get_user(user_id: int) -> User:
